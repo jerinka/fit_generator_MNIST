@@ -118,13 +118,17 @@ print(labels.shape)
 steps_per_epoch = len(train_generator)
 validation_steps = len(val_generator)
 
+model.load_weights('model1.h5')
 model.fit_generator(
         train_generator,
         steps_per_epoch=steps_per_epoch,
-        epochs=10,
+        epochs=3,
         validation_data=val_generator,
         validation_steps=validation_steps)
         
+model.save_weights('model1.h5')
+
+
         
                    
                                           
